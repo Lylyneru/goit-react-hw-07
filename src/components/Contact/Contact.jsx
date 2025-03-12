@@ -1,6 +1,6 @@
 import s from "./Contact.module.css";
 
-const Contact = ({ name, number, onDelete }) => {
+const Contact = ({ id, name, number, onDelete }) => {
   return (
     <div className={s.contactConteiner}>
       <li className={s.contactItem}>
@@ -8,7 +8,7 @@ const Contact = ({ name, number, onDelete }) => {
           <span className={s.contactName}>👤 {name}</span>
           <span className={s.contactNumber}>📞 {number}</span>
         </div>
-        <button className={s.deleteButton} onClick={onDelete}>
+        <button className={s.deleteButton} onClick={() => onDelete(id)}>
           Delete
         </button>
       </li>
